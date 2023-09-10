@@ -1,18 +1,13 @@
 package com.tugalsan.api.annotation.server;
 
+import com.tugalsan.api.unsafe.client.TGS_UnSafe;
 import java.io.File;
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class TS_AnnotationSearch {
 
 //    public static void main(String[] args) {
 //        sniffPackage("controllers").stream().forEach(path -> System.out.println(path));
 //    }
-
     public static File getResourceDirectory(Class clazz, String packageName) {
         return new File(clazz.getClassLoader().getResource(packageName.replace('.', '/')).getFile());
     }
@@ -67,7 +62,7 @@ public class TS_AnnotationSearch {
 //                }
 //            }
 //        } catch (Exception e) {
-//            e.printStackTrace();
+//            TGS_UnSafe.throwIfInterruptedException(e);
 //        }
 //        return values;
 //    }
@@ -91,4 +86,5 @@ public class TS_AnnotationSearch {
 //
 //        return values;
 //    }
+
 }
