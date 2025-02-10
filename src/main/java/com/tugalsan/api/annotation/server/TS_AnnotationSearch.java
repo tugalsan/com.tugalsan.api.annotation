@@ -61,7 +61,7 @@ public class TS_AnnotationSearch {
 //                }
 //            }
 //        } catch (?Exception e) {
-//            TGS_UnSafe.throwIfInterruptedException(e);
+//            TGS_FuncUtils.throwIfInterruptedException(e);
 //        }
 //        return values;
 //    }
