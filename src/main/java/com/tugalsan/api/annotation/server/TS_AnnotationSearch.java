@@ -4,10 +4,14 @@ import java.io.File;
 
 public class TS_AnnotationSearch {
 
+    private TS_AnnotationSearch() {
+
+    }
+
 //    public static void main(String[] args) {
 //        sniffPackage("controllers").stream().forEach(path -> System.out.println(path));
 //    }
-    public static File getResourceDirectory(Class clazz, String packageName) {
+    public static <T> File getResourceDirectory(Class<T> clazz, String packageName) {
         return new File(clazz.getClassLoader().getResource(packageName.replace('.', '/')).getFile());
     }
 
@@ -85,5 +89,4 @@ public class TS_AnnotationSearch {
 //
 //        return values;
 //    }
-
 }
