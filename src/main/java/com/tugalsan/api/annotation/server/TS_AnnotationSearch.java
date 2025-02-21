@@ -2,17 +2,25 @@ package com.tugalsan.api.annotation.server;
 
 import java.io.File;
 
-public class TS_AnnotationSearch {
+final public class TS_AnnotationSearch {
 
     private TS_AnnotationSearch() {
 
+    }
+
+    private static <T> ClassLoader getClassLoader(Class<T> clazz) {
+        var cl = clazz.getClassLoader();
+        if (cl == null) {
+            return Thread.currentThread().getContextClassLoader();
+        }
+        return cl;
     }
 
 //    public static void main(String[] args) {
 //        sniffPackage("controllers").stream().forEach(path -> System.out.println(path));
 //    }
     public static <T> File getResourceDirectory(Class<T> clazz, String packageName) {
-        return new File(clazz.getClassLoader().getResource(packageName.replace('.', '/')).getFile());
+        return new File(getClassLoader(clazz).getResource(packageName.replace('.', '/')).getFile());
     }
 
     public static String getFileNameLabel(File file) {
