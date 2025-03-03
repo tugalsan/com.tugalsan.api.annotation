@@ -54,7 +54,7 @@ final public class TS_AnnotationSearch {
 //        var values = new ArrayList<String>();
 //        try {
 //            var cls = Class.forName(className);
-//            if (annotationsToFind.stream().filter(a -> cls.isAnnotationPresent(a)).findAny().isPresent()) {
+//            if (annotationsToFind.stream().anyMatch(a -> cls.isAnnotationPresent(a))) {
 //                Annotation[] annotationArray = cls.getAnnotationsByType(RequestMapping.class);
 //
 //                if (annotationArray.length < 1) {
