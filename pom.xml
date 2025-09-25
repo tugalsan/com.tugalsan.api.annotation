@@ -58,7 +58,7 @@
     </build>
     
     <properties>
-        <prop.jdk>24</prop.jdk>
+        <prop.jdk>25</prop.jdk>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 </project>
